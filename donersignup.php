@@ -1,6 +1,7 @@
 <?php 
-
-
+include_once "pdo.php";
+$stmt = $pdo->query("SELECT * FROM blood_group");
+$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <html lang="en">
 <head>
@@ -30,6 +31,18 @@
     <input type="text" name="amount" id="D_AMOUNT">
     <br>
     <input type="submit" value="submit" id="submit">
+    <select name="blood group" id="blood_group">
+    <?php
+     foreach($rows as $row){
+        echo "<option value=".$row['blood_id'].">";
+        echo htmlentities($row['TYPE_OF_BLOOD']);
+        echo "</option>";
+    }
+    ?>
+     </select>
+    <input type="submit"value="submit">
+    
+
     
     </form>
 </body>
