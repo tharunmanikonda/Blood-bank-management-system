@@ -1,5 +1,5 @@
 <?php
-include_once "pdo.php";
+require_once "pdo.php";
 
 if (isset($_POST['name'])&& isset($_POST['phoneno'])&& isset($_POST['email'])&& isset($_POST['address'])){
 $sql = "INSERT INTO doctor (NAME,PHONENO,EMAIL,address) VALUES (:name ,:pno,:email,:address)";
