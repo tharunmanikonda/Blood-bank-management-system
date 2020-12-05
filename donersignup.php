@@ -1,5 +1,14 @@
 <?php 
 require_once "pdo.php";
+
+session_start();
+
+  if(isset($_POST['Cancel'])){
+    header('Location: index.php');
+    return;
+  }
+
+
 $stmt = $pdo->query("SELECT * FROM blood_group");
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -18,10 +27,22 @@ isset($_POST['emailid']) && isset($_POST['address']) && isset($_POST['amount']) 
         ':amount' =>$_POST['amount'],
         ':bid'=>$_POST['blood_group'])
     );
+    $stmt3 = $pdo->query("SELECT * FROM `donor` WHERE `name` = '".$_POST['name']."'");
+            $rows2 = $stmt3->fetchAll(PDO::FETCH_ASSOC);
 
-   
 
-    echo $_POST['blood_group'];
+            $stmt1 = $pdo->prepare('INSERT INTO donor_login(USERNAME,PASSWORD,D_ID) VALUES ( :ur, :pw, :dn)');
+            $stmt1->execute(array(
+                ':ur' => $_POST['USERNAME'],
+                ':pw' => $_POST['PASSWORD'],
+                ':dn' => $rows2[0]['D_ID'],)
+                );$_fal="Record inserted";
+
+                header('Location: index.php');
+
+    header('Location: index.php');
+
+    
 
 }
 ?>
@@ -53,6 +74,8 @@ isset($_POST['emailid']) && isset($_POST['address']) && isset($_POST['amount']) 
     <label for="D_AMOUNT">AMOUNT:</label>
     <input type="text" name="amount" id="D_AMOUNT">
     <br>
+    <p>	password:
+            <input type="password" name="password" size="60"/></p>
     <label for="blood type">TYPE OF BLOOD:</label>
     <select id="blood_group" name="blood_group">
             <?php
@@ -65,6 +88,7 @@ isset($_POST['emailid']) && isset($_POST['address']) && isset($_POST['amount']) 
             </select>
      <br>
     <input type="submit"value="submit">
+    <input type="submit" value ="Cancel" name="cancel" id="cancel">
     
 
     
