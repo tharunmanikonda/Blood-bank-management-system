@@ -1,16 +1,42 @@
 <?php
 require_once "pdo.php";
+session_start();
 
-if (isset($_POST['name'])&& isset($_POST['phoneno'])&& isset($_POST['email'])&& isset($_POST['address'])){
-$sql = "INSERT INTO doctor (NAME,PHONENO,EMAIL,address) VALUES (:name ,:pno,:email,:address)";
-    echo ("<pre>\n".$sql."\n</pre>\n");
-     $stmt = $pdo->prepare($sql);
-     $stmt->execute(array(
-        ':name' => $_POST['name'],
-        ':pno'=> $_POST['phoneno'],
-        ':email' => $_POST['email'],
-        ':address' =>$_POST['address']));
+  if(isset($_POST['Cancel'])){
+    header('Location: index.php');
+    return;
+  }
 
+if ( isset($_POST['username'])) {
+    if((strlen($_POST['username'])>0)){
+
+        if (isset($_POST['name'])&& isset($_POST['phoneno'])&& isset($_POST['email'])&& isset($_POST['address'])){
+            $sql = "INSERT INTO doctor (NAME,PHONENO,EMAIL,address) VALUES (:name ,:pno,:email,:address)";
+            echo ("<pre>\n".$sql."\n</pre>\n");
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute(array(
+            ':name' => $_POST['name'],
+            ':pno'=> $_POST['phoneno'],
+            ':email' => $_POST['email'],
+            ':address' =>$_POST['address']));
+            $stmt3 = $pdo->query("SELECT * FROM `doctor` WHERE `NAME` = '".$_POST['name']."'");
+            $rows2 = $stmt3->fetchAll(PDO::FETCH_ASSOC);
+    
+    
+                $stmt1 = $pdo->prepare('INSERT INTO doctor_signin(USERNAME,PASSWORD,D_ID) VALUES ( :ur, :pw, :dn)');
+                $stmt1->execute(array(
+                    ':ur' => $_POST['username'],
+                    ':pw' => $_POST['password'],
+                    ':dn' => $rows2[0]['D_ID'],)
+                    );$_fal="Record inserted";
+    
+                    header('Location: index.php');
+
+    }
+
+
+}
+echo ($_POST['name']);
 }
 
 ?>
@@ -38,7 +64,13 @@ $sql = "INSERT INTO doctor (NAME,PHONENO,EMAIL,address) VALUES (:name ,:pno,:ema
     <input type="text" id="address" name="address">
     <br>
     </P>
+    <label for="username">username:</label>
+    <input type="text" name="username" id="username">
+    <p>	password:
+            <input type="password" name="password" size="60"/></p>
     <input type="submit" value ="add" id="submit">
+    <input type="submit" value ="Cancel" name="cancel" id="cancel">
+    
 
 </form>
 </body>
