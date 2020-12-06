@@ -12,7 +12,7 @@ session_start();
 $stmt = $pdo->query("SELECT * FROM blood_group");
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 if ( isset($_POST['username'])) {
-    if((strlen($_POST['username'])>0)){
+    if((strlen($_POST['username'])>0) && strlen($_POST['password']>=8)){
         if (isset($_POST['name']) && isset($_POST['age']) && isset($_POST['phoneno']) && 
             isset($_POST['emailid']) && isset($_POST['address']) && isset($_POST['amount']) && isset($_POST['blood_group'])) {
             $sql = "INSERT INTO doner(D_NAME,D_AGE, D_PHONENO, D_EMAIL, D_ADDRESS,D_AMOUNT,blood_id)
@@ -40,11 +40,19 @@ if ( isset($_POST['username'])) {
                 ':dn' => $rows2[0]['D_ID'],)
                 );$_fal="Record inserted";
 
-                header('Location: index.php');
+                $_SESSION['success'] = "data inserted";
+                    header('Location: index.php');
+
 
     
             }
-        }
+            else{
+                $_SESSION['error'] = "enter data according to requirements";
+                header('location:docter.php');
+                return;
+            }
+        
+         }
 
     }
     echo $_POST['username'];
@@ -64,6 +72,13 @@ if ( isset($_POST['username'])) {
 </head>
 <body>
 <h1>doner table :</h1>
+<?php
+ if(isset($_SESSION['error'])){
+     echo $_SESSION['error'];
+     unset($_SESSION['error']);
+ }
+ ?>
+ 
     <form method="post">
     <label for="D_NAME"> NAME:</label>
     <input type="text" id="D_NAME" name="name">

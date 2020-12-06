@@ -8,9 +8,9 @@ session_start();
   }
 
 if ( isset($_POST['username'])) {
-    if((strlen($_POST['username'])>0)){
+    if((strlen($_POST['username'])>0) && strlen($_POST['password']>=6)){
 
-        if (isset($_POST['name'])&& isset($_POST['phoneno'])&& isset($_POST['email'])&& isset($_POST['address'])){
+        if (isset($_POST['name'])&& isset($_POST['phoneno'])&& isset($_POST['email'])&& isset($_POST['address']) ){
             $sql = "INSERT INTO doctor (NAME,PHONENO,EMAIL,address) VALUES (:name ,:pno,:email,:address)";
             echo ("<pre>\n".$sql."\n</pre>\n");
             $stmt = $pdo->prepare($sql);
@@ -30,8 +30,15 @@ if ( isset($_POST['username'])) {
                     ':dn' => $rows2[0]['D_ID'],)
                     );$_fal="Record inserted";
     
+                   
+                    $_SESSION['success'] = "data inserted";
                     header('Location: index.php');
 
+    }
+    else{
+        $_SESSION['error'] = "enter data according to requirements";
+        header('location:docter.php');
+        return;
     }
 
 
@@ -47,6 +54,12 @@ echo ($_POST['name']);
     <title>Document</title>
 </head>
 <body>
+ <?php
+ if(isset($_SESSION['error'])){
+     echo $_SESSION['error'];
+     unset($_SESSION['error']);
+ }
+ ?>
 <form method="post">
    <P> <label for="NAME"> NAME:</label>
     <input type="text" id="name" name="name">
