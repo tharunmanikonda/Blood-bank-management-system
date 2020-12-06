@@ -8,7 +8,7 @@ session_start();
   }
 
 if ( isset($_POST['username'])) {
-    if((strlen($_POST['username'])>0) && strlen($_POST['password']>=6)){
+    if((strlen($_POST['username'])>0) && strlen($_POST['password']>=0)){
 
         if (isset($_POST['name'])&& isset($_POST['phoneno'])&& isset($_POST['email'])&& isset($_POST['address']) ){
             $sql = "INSERT INTO doctor (NAME,PHONENO,EMAIL,address) VALUES (:name ,:pno,:email,:address)";
@@ -32,18 +32,18 @@ if ( isset($_POST['username'])) {
     
                    
                     $_SESSION['success'] = "data inserted";
-                    header('Location: index.php');
+                    header('Location: login/doctersignin.php');
+
+    }
 
     }
     else{
         $_SESSION['error'] = "enter data according to requirements";
-        header('location:docter.php');
+        header('location:doctor.php');
         return;
-    }
-
 
 }
-echo ($_POST['name']);
+
 }
 
 ?>

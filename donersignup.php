@@ -37,27 +37,26 @@ if ( isset($_POST['username'])) {
             $stmt1->execute(array(
                 ':ur' => $_POST['username'],
                 ':pw' => $_POST['password'],
-                ':dn' => $rows2[0]['D_ID'],)
+                ':dn' => $rows2[0]['D_ID'])
                 );$_fal="Record inserted";
 
                 $_SESSION['success'] = "data inserted";
-                    header('Location: index.php');
+                    header('Location:login/donersignin.php');
 
 
     
             }
+        }
             else{
                 $_SESSION['error'] = "enter data according to requirements";
                 header('location:docter.php');
                 return;
             }
-        
-         }
+    
+         
 
     }
-    echo $_POST['username'];
-    echo $_POST['password'];
-    echo $_POST['D_ID'];
+   
 
 
 
