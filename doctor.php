@@ -32,7 +32,7 @@ if ( isset($_POST['username'])) {
     
                    
                     $_SESSION['success'] = "data inserted";
-                    header('Location: login/doctersignin.php');
+                    header('Location: login/doctorsignin.php');
 
     }
 

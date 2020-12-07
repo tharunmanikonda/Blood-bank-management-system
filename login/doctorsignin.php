@@ -11,6 +11,7 @@ if ( isset($_POST['username'])) {
         $rows2 = $stmt3->fetchAll(PDO::FETCH_ASSOC);
         //print_r (isset($rows2[0]));
         if(count($rows2)>0){
+            $_SESSION['success'] = "done";
             $_SESSION['username'] = $rows2[0]['username'];
             $_SESSION['ID']=$rows2[0]['D_ID'];
             $_SESSION['role']= 1;
@@ -59,10 +60,7 @@ if ( isset($_POST['username'])) {
 </p>
 <input type="submit" value="submit" id="submit">
 <input type="submit" value="Cancel" id ="Cancel">
-<input type="button" id="button" onclick="$aa" value="signup">
-<?php
- $aa=header('Location:../doctor.php');
- ?>
+<input type="button" id="button"  value="signup">
 
 </form>
     

@@ -1,3 +1,10 @@
+
+
+<?php 
+session_start();
+echo "hii";
+echo "<a href='signout.php'></a>";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,10 +14,9 @@
 </head>
 <body>
 <?php 
-session_start();
-echo $_SESSION['username'];
-
+if(isset($_SESSION['success'])){
+echo "<a href='signout.php'></a>";
+}
 ?>
-<h1>hello</h1>
 </body>
 </html>

@@ -1,9 +1,9 @@
 <?php
 session_start();
+require_once "../pdo.php";
 if(isset($_SESSION['success'])){
     echo $_SESSION['success'];
     unset($_SESSION['success']);
-    require_once "../pdo.php";
 }
 if ( isset($_POST['username'])) {
     if((strlen($_POST['username'])>0) && (strlen($_POST['password'])>0)){
@@ -11,14 +11,15 @@ if ( isset($_POST['username'])) {
         $rows2 = $stmt3->fetchAll(PDO::FETCH_ASSOC);
         //print_r (isset($rows2[0]));
         if(count($rows2)>0){
+            $_SESSION['success'] = "done";
             $_SESSION['username'] = $rows2[0]['username'];
             $_SESSION['ID']=$rows2[0]['D_ID'];
             $_SESSION['role']= 1;
-            header('Location:../index.php');
+            header('Location:../signout.php');
             return;
         }else {
             $_SESSION['error']='Wrong Username and Password';
-            header('Location: doctersignin.php');
+            header('Location: donorsignin.php');
             return;
         }
 
@@ -54,7 +55,7 @@ if ( isset($_POST['username'])) {
 </p>
 <P>
 <label for="password">PASSWORD:</label>
-<input type="text" name ="password" id ="password">
+<input type="password" name ="password" id ="password">
 </p>
 <input type="submit" value="submit" id="submit">
 <input type="submit" value="Cancel" id ="Cancel">
