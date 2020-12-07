@@ -7,7 +7,7 @@ if(isset($_SESSION['success'])){
 }
 if ( isset($_POST['username'])) {
     if((strlen($_POST['username'])>0) && (strlen($_POST['password'])>0)){
-        $stmt3 = $pdo->query("SELECT `D_ID` FROM `doner_signin` WHERE USERNAME = '".$_POST['username']."' AND PASSWORD ='".$_POST['password']."'");
+        $stmt3 = $pdo->query("SELECT `D_ID` FROM `doctor_signin` WHERE USERNAME = '".$_POST['username']."' AND PASSWORD ='".$_POST['password']."'");
         $rows2 = $stmt3->fetchAll(PDO::FETCH_ASSOC);
         //print_r (isset($rows2[0]));
         if(count($rows2)>0){
@@ -24,6 +24,10 @@ if ( isset($_POST['username'])) {
 
     }
 }
+    
+    
+
+
 
 
 ?>
@@ -55,6 +59,11 @@ if ( isset($_POST['username'])) {
 </p>
 <input type="submit" value="submit" id="submit">
 <input type="submit" value="Cancel" id ="Cancel">
+<input type="button" id="button" onclick="$aa" value="signup">
+<?php
+ $aa=header('Location:../doctor.php');
+ ?>
+
 </form>
     
 </body>

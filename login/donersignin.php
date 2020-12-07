@@ -5,6 +5,29 @@ if(isset($_SESSION['success'])){
     unset($_SESSION['success']);
     require_once "../pdo.php";
 }
+if ( isset($_POST['username'])) {
+    if((strlen($_POST['username'])>0) && (strlen($_POST['password'])>0)){
+        $stmt3 = $pdo->query("SELECT `D_ID` FROM `doner_signin` WHERE USERNAME = '".$_POST['username']."' AND PASSWORD ='".$_POST['password']."'");
+        $rows2 = $stmt3->fetchAll(PDO::FETCH_ASSOC);
+        //print_r (isset($rows2[0]));
+        if(count($rows2)>0){
+            $_SESSION['username'] = $rows2[0]['username'];
+            $_SESSION['ID']=$rows2[0]['D_ID'];
+            $_SESSION['role']= 1;
+            header('Location:../index.php');
+            return;
+        }else {
+            $_SESSION['error']='Wrong Username and Password';
+            header('Location: doctersignin.php');
+            return;
+        }
+
+    }
+}
+
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,6 +37,16 @@ if(isset($_SESSION['success'])){
     <title>Document</title>
 </head>
 <body>
+
+
+<?php
+    
+         echo($_SESSION['error']);
+         unset($_SESSION['error']);
+ 
+ ?>
+
+
 <form method ="post" >
 <p>
 <label for="username">USERNAME:</label>
