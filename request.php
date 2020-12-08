@@ -16,17 +16,16 @@ if ( isset($_POST['name']) && isset($_POST['number'])
         ':units' => ($_POST['units']),
         ':address'=>($_POST['address']),
          ':bloodid'=>($_POST['blood_group']),
-        
+
         
         )
 
     );
+    
+    $_SESSION['success'] = "data inserted";
+    header('Location: index.php');
 
-    echo ($_POST['name']);
-    echo ($_POST['number']);
-    echo ($_POST['units']);
-    echo ($_POST['address']);
-    echo ($_POST['blood_group']);
+ 
   
 
 }

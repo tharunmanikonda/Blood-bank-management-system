@@ -2,6 +2,7 @@
 session_start();
 //session_destroy();
 echo "hi";
-echo "<a href='index.php'></a>";
+echo "\n";
+echo "<a href='index.php'>menu</a>";
 //header('Location: index.php');
 ?>

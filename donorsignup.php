@@ -41,26 +41,17 @@ if ( isset($_POST['username'])) {
                 );$_fal="Record inserted";
 
                 $_SESSION['success'] = "data inserted";
-                    header('Location:login/donorsignin.php');
+                header('Location: index.php');
+            
 
-
-    
+            }
             }
         }
-            else{
-                $_SESSION['error'] = "enter data according to requirements";
-                header('location:donorsignup.php');
-                return;
+    else{
+        $_SESSION['error'] = "enter data according to requirements";
+        header('location:donorsignup.php');
+        return;
             }
-    
-         
-
-    }
-   
-
-
-
-
 ?>
 <html lang="en">
 <head>

@@ -15,7 +15,7 @@ if ( isset($_POST['username'])) {
             $_SESSION['username'] = $rows2[0]['username'];
             $_SESSION['ID']=$rows2[0]['D_ID'];
             $_SESSION['role']= 1;
-            header('Location:../signout.php');
+            header('Location: ../signout.php');
             return;
         }else {
             $_SESSION['error']='Wrong Username and Password';
@@ -38,14 +38,6 @@ if ( isset($_POST['username'])) {
     <title>Document</title>
 </head>
 <body>
-
-
-<?php
-    
-         echo($_SESSION['error']);
-         unset($_SESSION['error']);
- 
- ?>
 
 
 <form method ="post" >

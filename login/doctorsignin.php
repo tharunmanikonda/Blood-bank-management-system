@@ -12,14 +12,13 @@ if ( isset($_POST['username'])) {
         //print_r (isset($rows2[0]));
         if(count($rows2)>0){
             $_SESSION['success'] = "done";
-            $_SESSION['username'] = $rows2[0]['username'];
-            $_SESSION['ID']=$rows2[0]['D_ID'];
+            $_SESSION['D_ID']=$rows2[0]['D_ID'];
             $_SESSION['role']= 1;
-            header('Location:../index.php');
+            header('Location: ../index.php');
             return;
         }else {
             $_SESSION['error']='Wrong Username and Password';
-            header('Location: doctersignin.php');
+            header('Location: doctorsignin.php');
             return;
         }
 
