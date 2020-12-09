@@ -15,9 +15,9 @@ if ( isset($_POST['name']) && isset($_POST['number'])
         ':phno' => ($_POST['number']),
         ':units' => ($_POST['units']),
         ':address'=>($_POST['address']),
-         ':bloodid'=>($_POST['blood_group']),
+         ':bloodid'=>($_POST['blood_group'])
 
-        
+
         )
 
     );

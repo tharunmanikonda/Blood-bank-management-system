@@ -25,10 +25,6 @@ if ( isset($_POST['username'])) {
 
     }
 }
-
-
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">

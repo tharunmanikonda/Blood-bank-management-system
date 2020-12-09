@@ -14,7 +14,7 @@ if ( isset($_POST['username'])) {
             $_SESSION['success'] = "done";
             $_SESSION['D_ID']=$rows2[0]['D_ID'];
             $_SESSION['role']= 1;
-            header('Location: ../index.php');
+            header('Location: ../doctorpage.php');
             return;
         }else {
             $_SESSION['error']='Wrong Username and Password';
@@ -24,12 +24,6 @@ if ( isset($_POST['username'])) {
 
     }
 }
-    
-    
-
-
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -42,7 +36,7 @@ if ( isset($_POST['username'])) {
 
 <?php
     
-         echo($_SESSION['error']);
+         //echo($_SESSION['error']);
          unset($_SESSION['error']);
  
  ?>
