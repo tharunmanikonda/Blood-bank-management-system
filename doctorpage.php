@@ -3,11 +3,25 @@ require_once "pdo.php";
 require_once "doctorpagenavbar.php";
 
 session_start();
+/*
 if(isset($_POST['Cancel'])){
     header('Location: docterpage.php');
     return;
   }
-if (($_POST['details'])== "donor"){
+
+if (isset($_POST['ADD'])){
+    $sql = $pdo->query("SELECT 	request.R_ID ,blood_bank.B_ID FROM `request` JOIN blood_bank WHERE `R_NAME` ='".$_POST['R_NAME']."'");
+    $rows2 = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+    $stmt1 = $pdo->prepare('INSERT INTO sold (R_ID,B_ID) VALUES ( :id, :bid)');
+                $stmt1->execute(array(
+                    ':id' => $rows2[0]['R_ID'],
+                    ':bid' => $rows2[0]['B_ID'])
+                    );
+    
+}
+
+if(($_POST['details'])=="donor"){
     $stmt3 = $pdo->query("SELECT D_NAME,D_AMOUNT FROM `doner`");
             $rows3 = $stmt3->fetchAll(PDO::FETCH_ASSOC);
             echo "<p>donors are </p>";
@@ -23,6 +37,7 @@ if (($_POST['details'])== "donor"){
                 echo("</td><td>");
                 echo($row['D_AMOUNT']);
                 echo("</td><td>");
+               
             }
             echo "</table>\n";
 
@@ -41,6 +56,8 @@ else if(($_POST['details'])=="request"){
             echo"</td><td>";
             echo "units:";
             echo"</td><td>";
+            echo "add:";
+            echo"</td><td>";
             foreach ( $rows4 as $row ) {
                 
                 echo "<tr><td>";
@@ -50,6 +67,11 @@ else if(($_POST['details'])=="request"){
                 echo("</td><td>");
                 echo($row['R_UNITS']);
                 echo("</td><td>");
+                echo('<form method="post"><input type="hidden" ');
+                echo('name="add" value="'.$row['R_NAME'].'">'."\n");
+                echo('<input type="submit" value="ADD" name="ADD">');
+                echo("\n</form>\n");
+                echo("</td></tr>\n");
                
 
             }
@@ -101,7 +123,7 @@ else if(($_POST['details'])=="sold"){
 <body>
 
 <form method="post">
-<label for="cars">menu</label>
+<label for="details">menu</label>
 
 <select name="details" id="details">
     <option value=" ">choose the option</option>
@@ -123,3 +145,4 @@ else if(($_POST['details'])=="sold"){
 
     echo "</li>";
 }
+*/

@@ -74,7 +74,7 @@ body {
 <div class="navbar">
   <a href="#home">Home</a>
   <a href="#news">News</a>
-  <div class="dropdown">
+  <!--<div class="dropdown">
     <button class="dropbtn">Details 
       <i class="fa fa-caret-down"></i>
     </button>
@@ -84,7 +84,7 @@ body {
       <a href="doctorscrolldown/solddetails.php">donated blood</a>
       
     </div>
-  </div> 
+  </div>!--> 
 </div>
 
 </body>

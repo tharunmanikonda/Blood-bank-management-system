@@ -55,6 +55,6 @@ if (isset($_POST['name'])&& isset($_POST['phoneno'])&& isset($_POST['units'])&& 
     <input type="submit" value ="add" id="submit">
     <input type="submit" value ="Cancel" name="cancel" id="cancel">
     
-
+</form>
 </body>
 </html>

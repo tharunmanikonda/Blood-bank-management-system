@@ -2,8 +2,16 @@
 session_start();
 require_once "../pdo.php";
 if(isset($_SESSION['success'])){
-    echo $_SESSION['success'];
+    echo ($_SESSION['success']);
     unset($_SESSION['success']);
+}
+if(isset($_POST['cancel'])){
+    header('Location: ../index.php');
+    return; 
+  }
+if(isset($_POST['signup'])){
+    header('Location: ../doctor.php');
+    return;
 }
 if ( isset($_POST['username'])) {
     if((strlen($_POST['username'])>0) && (strlen($_POST['password'])>0)){
@@ -52,8 +60,8 @@ if ( isset($_POST['username'])) {
 <input type="password" name ="password" id ="password">
 </p>
 <input type="submit" value="submit" id="submit">
-<input type="submit" value="Cancel" id ="Cancel">
-<input type="button" id="button"  value="signup">
+<input type="submit" value="cancel" id ="Cancel">
+<input type="submit" id="button" name= "signup" value="signup">
 
 </form>
     
