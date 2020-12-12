@@ -21,9 +21,10 @@ if ( isset($_POST['username'])) {
         //print_r (isset($rows2[0]));
         if(count($rows2)>0){
             $_SESSION['success'] = "done";
-            $_SESSION['username'] = $rows2[0]['username'];
-            $_SESSION['ID']=$rows2[0]['D_ID'];
+            $_SESSION['USERNAME'] = $rows2[0]['USERNAME'];
+            $_SESSION['D_ID']=$rows2[0]['D_ID'];
             $_SESSION['role']= 1;
+            //echo("<a href='admin/delete.php?donor_id=".$row['donor_id'].
             header('Location: ../pagenavbar/donorpage.php');
             return;
         }else {

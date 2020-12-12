@@ -10,7 +10,7 @@ if(isset($_POST['cancel'])){
     return; 
   }
 if(isset($_POST['signup'])){
-    header('Location: ../doctor.php');
+    header('Location: ../signup/doctor.php');
     return;
 }
 if ( isset($_POST['username'])) {
@@ -43,9 +43,10 @@ if ( isset($_POST['username'])) {
 <body>
 
 <?php
-    
-         //echo($_SESSION['error']);
+        if(isset($_SESSION['error'])){
+         echo($_SESSION['error']);
          unset($_SESSION['error']);
+        }
  
  ?>
 
@@ -60,8 +61,8 @@ if ( isset($_POST['username'])) {
 <input type="password" name ="password" id ="password">
 </p>
 <input type="submit" value="submit" id="submit">
-<input type="submit" value="cancel" id ="Cancel">
-<input type="submit" id="button" name= "signup" value="signup">
+<input type="submit" value="cancel" name ="cancel" id ="Cancel">
+<input type="submit" id="signup" name= "signup" value="signup">
 
 </form>
     

@@ -1,9 +1,9 @@
 <?php
-require_once "pdo.php";
+require_once "../pdo.php";
 session_start();
 
   if(isset($_POST['cancel'])){
-    header('Location: index.php');
+    header('Location: ../index.php');
     return;
   }
 
@@ -32,7 +32,7 @@ if ( isset($_POST['username'])) {
     
                    
                     $_SESSION['success'] = "data inserted";
-                    header('Location: login/doctorsignin.php');
+                    header('Location: ../login/doctorsignin.php');
 
     }
 

@@ -1,9 +1,6 @@
-
-
 <?php 
-session_start();
+session_start(); 
 require_once "../pdo.php";
-
 ?>
 
 <!DOCTYPE html>
@@ -12,12 +9,33 @@ require_once "../pdo.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <?php
-    include_once "../donorpagenavbar.php";
-?>
+    <link rel="stylesheet" href="../bootstrap/css/style.css">
+
     </head>
 <body>
-    <h1>hii</h1>
+    <div class="navbar">
+<a href="index.php">blood donation</a>
+<?php  
+ $stmt3 = $pdo->query("SELECT * FROM `doner` WHERE `D_ID` = '".$_SESSION['D_ID']."'");
+ $rows2 = $stmt3->fetchAll(PDO::FETCH_ASSOC);
+ $_SESSION['USERNAME'] = $rows2[0]['D_NAME'];
+?>
+<a href="donordetails.php"><?php echo $_SESSION['USERNAME']; ?></a>
+  <a href="login/donorsignin.php">donor</a>
+  <a href="request.php">request</a>
+
+  <!--<div class="dropdown">
+    <button class="dropbtn">Details 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="doctordonordetails.php">donor</a>
+      <a href=""></a>
+      <a href="#">Link 3</a>
+      
+    </div>
+  </div> !-->
+</div>
 </body>
 </html>
 <?php

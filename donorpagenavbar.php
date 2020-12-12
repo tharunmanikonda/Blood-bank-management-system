@@ -12,7 +12,7 @@ body {
   overflow: hidden;
   background-color: #333;
 }
-
+ 
 .navbar a {
   float: left;
   font-size: 16px;
@@ -72,8 +72,9 @@ body {
 <body>
 
 <div class="navbar">
-  <a href="#home">Home</a>
+  <a href="">Home</a>
   <a href="#news">News</a>
+
   <!--<div class="dropdown">
     <button class="dropbtn">Details 
       <i class="fa fa-caret-down"></i>
@@ -86,7 +87,13 @@ body {
     </div>
   </div>!--> 
 </div>
+<?php
+session_start();
+require_once "pdo.php"; 
+ $stmt3 = $pdo->query("SELECT * FROM `doner` WHERE `D_NAME` = '".$_POST['name']."'");
+ $rows2 = $stmt3->fetchAll(PDO::FETCH_ASSOC);
 
+?>
 </body>
 </html>
 <!--<a href='admin/delete.php?donor_id=".$row['donor_id']."'>Delete</a>
