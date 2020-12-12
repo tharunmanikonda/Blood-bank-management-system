@@ -8,9 +8,23 @@ if(isset($_POST['Cancel'])){
     return;
 }
 
-$stmt4 = $pdo->query("SELECT R_NAME,R_PHONENO,R_UNITS FROM `request`");
+$stmt4 = $pdo->query("SELECT R_ID,R_NAME,R_PHONENO,R_UNITS FROM `request`");
 $rows4 = $stmt4->fetchAll(PDO::FETCH_ASSOC);
+if (isset($_POST['add'])){
+    $sql = $pdo->query("SELECT R_ID,R_NAME,BLOOD_ID FROM request WHERE R_ID  ='".$_POST['add']."'");
+    $rows2 = $sql->fetchAll(PDO::FETCH_ASSOC);
 
+    $stmt1 = $pdo->prepare('INSERT INTO sold (R_ID,name,B_ID) VALUES ( :id, :name, :bid)');
+                $stmt1->execute(array(
+                    ':id' => $rows2[0]['R_ID'],
+                    ':name' => $rows2[0]['R_NAME'],
+                    ':bid' => $rows2[0]['BLOOD_ID'])
+                    
+                    );
+    
+    
+ 
+}
 echo"<p>requests are </p>";
 echo '<table border="1">'."\n";
 echo "<tr><td>";
@@ -32,7 +46,7 @@ foreach ( $rows4 as $row ) {
     echo($row['R_UNITS']);
     echo("</td><td>");
     echo('<form method="post"><input type="hidden" ');
-    echo('name="add" value="'.$row['R_NAME'].'">'."\n");
+    echo('name="add" value="'.$row['R_ID'].'">'."\n");
     echo('<input type="submit" value="ADD" name="ADD">');
     echo("\n</form>\n");
     echo("</td></tr>\n");

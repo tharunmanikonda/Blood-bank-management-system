@@ -1,33 +1,15 @@
-
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="bootstrap/css/style.css">
-</head>
-<body>
-
-<div class="navbar">
-<a href="index.php">blood donation</a>
-  <a href="login/doctorsignin.php">doctor</a>
-  <a href="login/donorsignin.php">donor</a>
-  <a href="request.php">request</a>
-  <!--<div class="dropdown">
-    <button class="dropbtn">Details 
-      <i class="fa fa-caret-down"></i>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.php">blood donation</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="dropdown-content">
-      <a href="doctordonordetails.php">donor</a>
-      <a href=""></a>
-      <a href="#">Link 3</a>
-      
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link"aria-current="page" href="login/doctorsignin.php">doctor</a>
+        <a class="nav-link" aria-current="page" href="login/donorsignin.php">donor</a>
+        <a class="nav-link" aria-current="page" href="request.php">request</a>
+      </div>
     </div>
-  </div> !-->
-</div>
-
-</body>
-</html>
-<!--<a href='admin/delete.php?donor_id=".$row['donor_id']."'>Delete</a>
-    </ul>
   </div>
 </nav>
