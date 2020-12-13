@@ -42,12 +42,6 @@ if ( isset($_POST['username'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <?php
-/*if (isset("$_SESSION['error'])"){
-    echo("$_SESSION['error']");
-    unset("$_SESSION['error']");
-}*/
-?>
     
 </head>
 <body>
@@ -55,7 +49,7 @@ if ( isset($_POST['username'])) {
 <?php
 /*
 if (isset("$_SESSION['error'])"){
-    echo("$_SESSION['error']");
+    echo($_SESSION['error']);
     unset("$_SESSION['error']");
 }*/
 ?>

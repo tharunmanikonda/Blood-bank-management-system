@@ -34,7 +34,7 @@ if ( isset($_POST['username'])) {
             ':ur' => $_POST['username'],
             ':pw' => $_POST['password'],
             ':dn' => $rows2[0]['D_ID'])
-            );$_fal="Record inserted";
+            );
 
             $_SESSION['success'] = "data inserted";
             //$_SESSION['D_NAME'] = "$_POST['username']";
