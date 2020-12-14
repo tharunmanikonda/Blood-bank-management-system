@@ -47,24 +47,39 @@ if ( isset($_POST['username'])) {
          echo($_SESSION['error']);
          unset($_SESSION['error']);
         }
+        require_once "bootstrap.php";
  
  ?>
-
-
+<!--<style>
+body {
+  background-image: url('../images/bb4.png');
+}
+</style>
+!-->
 <form method ="post" >
 <p>
+<div class="row2">
+</div>
+<div class ="row3">
+<div class ="col-md-2">
+</div>
+<div class ="col-md-5">
+<div class="form-floating mb-3">
 <label for="username">USERNAME:</label>
-<input type="text" name ="username" id="username">
+<input type="text" class="form-control" name ="username" id="username" placeholder="name@example.com">
+</div>
 </p>
 <P>
+<div class="form-floating mb-3">
 <label for="password">PASSWORD:</label>
-<input type="password" name ="password" id ="password">
+<input type="password" class="form-control" name ="password" id ="password" placeholder="Password">
 </p>
 <input type="submit" value="submit" id="submit">
 <input type="submit" value="cancel" name ="cancel" id ="Cancel">
 <input type="submit" id="signup" name= "signup" value="signup">
 
 </form>
-    
+</div>
+</div>
 </body>
 </html>

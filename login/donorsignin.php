@@ -7,7 +7,7 @@ if(isset($_SESSION['success'])){
 }
 
 if(isset($_POST['signup'])){
-    header('Location: ../donorsignup.php');
+    header('Location: ../signup/donorsignup.php');
     return;
 }
 if(isset($_POST['cancel'])){
@@ -47,20 +47,29 @@ if ( isset($_POST['username'])) {
 <body>
 <h1>please login</h1>
 <?php
-/*
-if (isset("$_SESSION['error'])"){
+
+if (isset($_SESSION['error'])){
     echo($_SESSION['error']);
-    unset("$_SESSION['error']");
-}*/
+    unset($_SESSION['error']);
+}
+require_once "bootstrap.php";
 ?>
 <form method ="post" >
 <p>
+<div class="row2">
+</div>
+<div class ="row3">
+<div class ="col-md-2">
+</div>
+<div class ="col-md-5">
+<div class="form-floating mb-5">
 <label for="username">USERNAME:</label>
-<input type="text" name ="username" id="username">
+<input type="text" class="form-control" name ="username" id="username" placeholder="name@example.com">
 </p>
 <P>
+<div class="form-floating mb-3">
 <label for="password">PASSWORD:</label>
-<input type="password" name ="password" id ="password">
+<input type="password" class="form-control" name ="password" id ="password" placeholder="Password">
 </p>
 <input type="submit" value="submit" id="submit">
 <input type="submit" value="cancel" name ="cancel" id ="Cancel">

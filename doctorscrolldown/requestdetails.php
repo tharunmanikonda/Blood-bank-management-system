@@ -54,10 +54,10 @@ $count=1;
                                         echo "<td class=''>".htmlentities($row['R_PHONENO'])."</td>";
                                         echo "<td class=''>".htmlentities($row['R_UNITS'])."</td>";
                                         echo "<td class=''>".htmlentities($row['R_NAME'])."</td>";
-                                        echo("<td class=''>"'<form method="post"><input type="hidden" ')"</td>";
-                                        echo("<td class=''>"'name="add" value="'.$row['R_ID'].'">'."\n")"</td>";
-                                        echo("<td class=''>"'<input type="submit" value="ADD" name="ADD">'"</td>");
-                                        echo("\n</form>\n");
+                                        echo"<td  class=''>"'<form method="post"><input type="hidden"'"</td>";
+                                        echo"<td class=''>"'name="add" value="'.$row['R_ID'].'">'."\n""</td>";
+                                        echo"<td class=''>"'<input type="submit" value="ADD" name="ADD">'"</td>";
+                                        echo"\n</form>\n";
                                         echo "</tr>";
                                         $count++;
                                     }
