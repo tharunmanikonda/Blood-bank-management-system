@@ -19,20 +19,14 @@ if(isset($_POST['Cancel'])){
         </head>
         <body>
             <?php
+            if(isset($_SESSION['success1'])){
+                 echo($_SESSION['name']);
+                echo ($_SESSION['success1']);
+                unset($_SESSION['success1']);
+                unset($_SESSION['name']);
+            }
 $stmt4 = $pdo->query("SELECT R_ID,R_NAME,R_PHONENO,R_UNITS FROM `request`");
 $rows4 = $stmt4->fetchAll(PDO::FETCH_ASSOC);
-if (isset($_POST['add'])){
-    $sql = $pdo->query("SELECT R_ID,R_NAME,BLOOD_ID FROM request WHERE R_ID  ='".$_POST['add']."'");
-    $rows2 = $sql->fetchAll(PDO::FETCH_ASSOC);
- 
-    $stmt1 = $pdo->prepare('INSERT INTO sold (`R_ID`, `B_ID`, `name`) VALUES ( :id, :bid , :nm)');
-    print_r($stmt1);
-                $stmt1->execute(array(
-                    ':id' => $rows2[0]['R_ID'],
-                    ':bid' => $rows2[0]['BLOOD_ID'],
-                    ':nm' => $rows2[0]['R_NAME']
-                    ));
-}
 $count=1;
 ?>
 <p>requests are </p>
@@ -53,11 +47,7 @@ $count=1;
                                         echo "<td class=''>".htmlentities($row['R_NAME'])."</td>";
                                         echo "<td class=''>".htmlentities($row['R_PHONENO'])."</td>";
                                         echo "<td class=''>".htmlentities($row['R_UNITS'])."</td>";
-                                        echo "<td class=''>".htmlentities($row['R_NAME'])."</td>";
-                                        echo"<td  class=''>"'<form method="post"><input type="hidden"'"</td>";
-                                        echo"<td class=''>"'name="add" value="'.$row['R_ID'].'">'."\n""</td>";
-                                        echo"<td class=''>"'<input type="submit" value="ADD" name="ADD">'"</td>";
-                                        echo"\n</form>\n";
+                                        echo("<td class='' > <a href='add.php?R_id=".$row['R_ID']."'>ACCEPT REQUEST</a></td>");
                                         echo "</tr>";
                                         $count++;
                                     }
@@ -65,9 +55,8 @@ $count=1;
                                     </tbody>
                         </table>
                         <p></p>
-                        <a class="btn btn-primary btn-lg btn-block" data-toggle="collapse" href="../doctorpage.php" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        <a class="btn btn-primary btn-lg btn-block" href="../doctorpage.php" role="button" aria-expanded="false" aria-controls="collapseExample">
                                 back
                 </a>
                 </body>
         </html>
-        

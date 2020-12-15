@@ -61,64 +61,85 @@ if ( isset($_POST['username'])) {
  }
  require_once "bootstrap.php";
  ?>
-<form method="post">
-<form class="row g-3 needs-validation" novalidate>
-  <div class="col-md-4">
-    <label for="name" class="form-label">NAME</label>
-    <input type="text" class="form-control"id="name" value ="" required name="name">
-    <div class="valid-feedback">
-      Looks good!
-    </div>
-  </div>
-    <div class="col-md-4">
-    <label for="name" class="form-label">USERNAME</label>
-    <div class="input-group has-validation">
-    <input type="text" class="form-control" name="username" aria-describedby="username" required id="username">
-    <div class="invalid-feedback">
-        Please choose a username.
-      </div>
-    </div>
-  </div>
-  <div class="col-md-4">
-        <label for="PHONENO"class="form-label">PHONE NO</label>
-        <div class="input-group has-validation">
-    <input type="text" id="phoneno"class="form-control" value ="" required name="phoneno">
-    <div class="invalid-feedback">
-        Please enter your are number.
-      </div>
-    </div>
-  </div>
-  <div class="col-md-4">
-  <label for="emailid"class="form-label">EMAIL ID</label>
-  <div class="input-group has-validation">
-    <input type="email" id="email"class="form-control" value ="" required  name="email">
-    <div class="invalid-feedback">
-        Please enter your are mail id.
-      </div>
-    </div>
-  </div>
-  <div class="col-md-4">
-        <label for="address"class="form-label"> ADDRESS</label>
-        <div class="input-group has-validation">
-    <input type="text" id="address"class="form-control" value ="" required name="address">
-    <div class="invalid-feedback">
-        Please enter your are address.
-      </div>
-    </div>
-  </div>
-  <div class="col-md-4">
-  <label for="password"class="form-label">PASSWORD </label>
-  <div class="input-group has-validation">
-    <input type="password" name="password" value ="" required class="form-control">
-    <div class="invalid-feedback">
-        Please create a password.
-      </div>
-    </div>
-  </div>
-  <div class="col-6">
-    <input type="submit" value ="add" id="submit">
-    <input type="submit" value ="Cancel" name="cancel" id="cancel">
-    </div>
+ <h1>please login</h1>
+  <div class="container">
+        <div class= "container">
+        <div class="col-12">
+        </div>
+            <form method="post" id="form_login" class="g-2 needs-validation" novalidate>
+            <div class ="row">
+                <div class="col-4">
+                          <label for="name" class="form-label">NAME</label>
+                          <input type="text" class="form-control"id="name" value ="" required name="name">
+                          <div class="valid-feedback">
+                                Looks good!
+                          </div>
+                </div>
+                <div class="col-4">
+                       <label for="name" class="form-label">USERNAME</label>
+                          <div class="input-group has-validation">
+                               <input type="text" class="form-control" name="username" aria-describedby="username" required id="username">
+                               <div class="valid-feedback">
+                                Please choose a username.
+                              </div>
+                          </div> 
+                </div>
+            </div>
+            <div class ="row"> 
+                 <div class="col-4">
+                        <label for="PHONENO"  class="form-label"> PHONE NO</label>
+                        <div class="input-group has-validation">
+                                <span class="input-group-text" id="inputGroupPrepend">+91</span>
+                                <input type="text" class="form-control" id="D_PHONENO" value ="" required name="phoneno">
+                                <div class="valid-feedback">
+                                     please enter your phone number.
+                                </div>
+                         </div>
+                 </div>    
+
+                   <div class="col-4">
+                        <label for="emailid"class="form-label">EMAIL ID</label>
+                             <div class="input-group has-validation">
+                                  <input type="email" id="email"class="form-control" value ="" required  name="email">
+                                      <div class="invalid-feedback">
+                                            Please enter your are mail id.
+                                      </div>
+                             </div>
+                   </div>
+            </div>       
+            <div class ="row">  
+                <div class="col-8">
+                        <label for="address"class="form-label"> ADDRESS</label>
+                        <div class="input-group has-validation">
+                            <input type="text" id="address"class="form-control" value ="" required name="address">
+                                <div class="invalid-feedback">
+                                        Please enter your are address.
+                                </div>
+                        </div>
+                </div>
+            </div>          
+            <div class ="row">  
+                <div class="col-8">
+                             <label for="password"class="form-label">PASSWORD </label>
+                                      <div class="input-group has-validation">
+                                                <input type="password" name="password" value ="" required class="form-control">
+                                                      <div class="invalid-feedback">
+                                             Please create a password.
+                                                      </div>
+                            
+                                     </div>
+               </div>
+            </div>
+            <div class ="row">
+                    <div class="col-md-12">
+                         <input type="submit"value ="add" id="submit">
+                                 <input type="submit" value ="Cancel" name="cancel" id="cancel">
+                                    
+                    </div>
+              </div>                      
+                                    
     </form>
+    </div>
+    </div>
 </body>
 </html>

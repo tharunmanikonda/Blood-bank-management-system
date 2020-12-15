@@ -46,7 +46,7 @@ if(isset($_POST['Cancel'])){
                                 ?>
                             </tbody>
                 </table>
-                <a class="btn btn-primary btn-lg btn-block" data-toggle="collapse" href="../doctorpage.php" role="button" aria-expanded="false" aria-controls="collapseExample">
+                <a class="btn btn-primary btn-lg btn-block"  href="../doctorpage.php" role="button" aria-expanded="false" aria-controls="collapseExample">
                                 back
                 </a>
         </body>

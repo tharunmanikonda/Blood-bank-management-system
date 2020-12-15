@@ -63,8 +63,12 @@ if ( isset($_POST['username'])) {
  }
  require_once "bootstrap.php";
  ?>
-    <form method="post">
-    <form class="container g-2 needs-validation" novalidate>
+
+    <div class="container">
+        <div class= "container">
+        <div class="col-12">
+        </div>
+        <form method="post" class="g-2 needs-validation" novalidate>
             <div class ="row">
                 <div class="col-3">
                         <label for="name" class="form-label">NAME</label>
@@ -89,7 +93,8 @@ if ( isset($_POST['username'])) {
                             </div>
                         </div>
                  </div>
-            </div>
+            </div>     
+            
             <div class ="row">
                 <div class="col-4">
                         <label for="PHONENO"  class="form-label"> PHONE NO</label>
@@ -100,7 +105,8 @@ if ( isset($_POST['username'])) {
                                      please enter your phone number.
                                 </div>
                          </div>
-                <div class="col-4">
+                </div>
+                <div class="col-5">
                         <label for="emailid"class="form-label">EMAIL ID</label>
                         <div class="input-group has-validation">
                                 <input type="email" id="email"class="form-control" value ="" required  name="emailid">
@@ -120,40 +126,43 @@ if ( isset($_POST['username'])) {
                                 </div>
                         </div>
                 </div>
-            </div>
-                <!--<div class ="row">!--->
                 <div class="col-4">
-                        <label for="password"class="form-label">PASSWORD </label>
-                            <div class="input-group has-validation">
-                                <input type="password" name="password" value ="" required class="form-control">
-                                    <div class="invalid-feedback">
-                                             Please create a password.
-                                    </div>
-                            </div>
+                     <label for="blood type" class="form-label">TYPE OF BLOOD:</label>
+                     <div></div>
+                        <select class="form-select" id="blood_group" name="blood_group">
+                            <option selected disabled value="">blood group</option>
+                                <?php
+                                     foreach($rows as $row){
+                                          echo "<option value = ".$row['BLOOD_ID'].">";
+                                          echo htmlentities($row['TYPE_OF_BLOOD']);
+                                          echo "</option>";
+                                          } 
+                                 ?>
+                        </select>
                 </div>
-            </div>    
-
-  
-  <label for="blood type" class="form-label">TYPE OF BLOOD:</label>
-    <select class="form-select" id="blood_group" name="blood_group">
-    <option selected disabled value="">blood group</option>
-            <?php
-            foreach($rows as $row){
-                echo "<option value = ".$row['BLOOD_ID'].">";
-                echo htmlentities($row['TYPE_OF_BLOOD']);
-                echo "</option>";
-            } 
-            ?>
-            </select>
-            <div class="col-md-12">
-    <input type="submit"value="submit">
-    <input type="submit" value ="Cancel" name="cancel" id="cancel">
-    </div>
-    </div>
-    
-            
-
-    
-    </form>
+            </div>
+            <div class ="row">  
+                <div class="col-4">
+                             <label for="password"class="form-label">PASSWORD </label>
+                                      <div class="input-group has-validation">
+                                                <input type="password" name="password" value ="" required class="form-control">
+                                                      <div class="invalid-feedback">
+                                             Please create a password.
+                                                      </div>
+                            
+                                     </div>
+               </div>
+            </div>
+            <div class ="row">
+                    <div class="col-md-12">
+                         <input type="submit"value="submit">
+                                 <input type="submit" value ="Cancel" name="cancel" id="cancel">
+                                    
+                    </div>
+                                            
+        </form>
+        </div>
+        </div>
+        </div>
 </body>
 </html>
