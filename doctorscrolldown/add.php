@@ -34,7 +34,6 @@ if(isset($_POST['submit'])){
                 <br>
         <input type="submit" class="btn btn-lg btn-primary btn-bloc" name ="submit"value="Yes">
             <input type="submit" class="btn btn-lg btn-primary btn-bloc" name="cancel" value="Cancel"></p>
-        </form>
-                    
+        </form>                    
                 </body>
                 </html>

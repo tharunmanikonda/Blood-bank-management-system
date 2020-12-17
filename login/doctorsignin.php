@@ -22,7 +22,7 @@ if ( isset($_POST['username'])) {
             $_SESSION['success'] = "done";
             $_SESSION['D_ID']=$rows2[0]['D_ID'];
             $_SESSION['role']= 1;
-            header('Location: ../doctorpage.php');
+            header('Location: ../doctornav/doctorpage.php');
             return;
         }else {
             $_SESSION['error']='Wrong Username and Password';
@@ -39,47 +39,34 @@ if ( isset($_POST['username'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
-<body>
 
+
+</head>
+<body class="text-center">
 <?php
         if(isset($_SESSION['error'])){
          echo($_SESSION['error']);
          unset($_SESSION['error']);
         }
         require_once "bootstrap.php";
- 
  ?>
-<!--<style>
-body {
-  background-image: url('../images/bb4.png');
-}
-</style>
-!-->
-<form method ="post" >
+ <link rel="stylesheet" href="../bootstrap/css/background.css">
 <p>
-<div class="row2">
-</div>
-<div class ="row3">
-<div class ="col-md-2">
-</div>
-<div class ="col-md-5">
-<div class="form-floating mb-3">
-<label for="username">USERNAME:</label>
-<input type="text" class="form-control" name ="username" id="username" placeholder="name@example.com">
-</div>
 </p>
-<P>
-<div class="form-floating mb-3">
-<label for="password">PASSWORD:</label>
-<input type="password" class="form-control" name ="password" id ="password" placeholder="Password">
-</p>
-<input type="submit" value="submit" id="submit">
-<input type="submit" value="cancel" name ="cancel" id ="Cancel">
-<input type="submit" id="signup" name= "signup" value="signup">
+<p></p>
+<form class="form-signin"  method="post" >  
+        <img class="mb-4" src="../images/logo.png" alt="" width="72" height="72">
+        <h3 class="h3 mb-3 font-weight-normal"> Doctor Login</h3>  
+    <p><label for="username" >USERNAME :</label>
+    <input type="text" name ="username" id = "username">
+    </p>
+    <p><label  for="password"> PASSWORD :</label>
+    <input type="password"  name ="password" id ="password">
+    </p>
+    <p> <input type="submit" value="submit" id="submit"> </label>
+      <label><input type="submit" value="cancel" name ="cancel" id ="Cancel"></label>
+      <label><input type="submit" id="signup" name= "signup" value="signup"></label></p>
 
-</form>
-</div>
-</div>
+    </form>
 </body>
 </html>

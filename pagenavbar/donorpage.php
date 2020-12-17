@@ -17,7 +17,12 @@ require_once "../pdo.php";
         require_once "donornavbar.php";
          $sql = $pdo->query("SELECT * FROM `doner` WHERE `D_ID` = '".$_SESSION['D_ID']."'");
          $rows2 = $sql->fetchAll(PDO::FETCH_ASSOC);
-         $_SESSION['USERNAME'] = $rows2[0]['D_NAME'];        
+         $_SESSION['USERNAME'] = $rows2[0]['D_NAME']; 
+         $sql1 = $pdo->query("SELECT TYPE_OF_BLOOD FROM `blood_group` WHERE `BLOOD_ID` = '".$rows2[0]['blood_id']."'");
+         $rows3 = $sql1->fetchAll(PDO::FETCH_ASSOC); 
+         $_SESSION['bloodgroup'] =$rows3[0]['TYPE_OF_BLOOD']; 
+         
+         
         ?>  
         <p></p>
        <div class="container-fluid">
@@ -35,8 +40,8 @@ require_once "../pdo.php";
                     <div class="card" style="width: 18rem;">
                         <img src="../images/bb.png" class="card-img-top" alt="...">
                         <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content  .</p>
+                        <h5 class="card-title"><?=$_SESSION['USERNAME']?></h5>
+                        <p class="card-text">blood group is  <?= $_SESSION['bloodgroup']?></p>
                         
                       </div>
                       </div>

@@ -21,17 +21,17 @@ session_start();
           <div class ="col-2">
           </div>
                 <div class="col-8">
-                <div class="shadow p-3 mb-5 bg-black rounded">
+                <div class="shadow p-2 mb-4 bg-black rounded">
                     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
                        <div class="carousel-inner">
                           <div class="carousel-item active">
-                              <img src="images/cover page 6.png" class="d-block w-100" alt="img1" height="408px">
+                              <img src="images/cover page 6.png" class="d-block w-100" alt="img1" height="400px">
                           </div>
                           <div class="carousel-item">
-                               <img src="images/cover page 7.png" class="d-block w-100" alt="img2"height="408px">
+                               <img src="images/cover page 7.png" class="d-block w-100" alt="img2"height="400px">
                            </div>
                            <div class="carousel-item">
-                              <img src="images/cover page 8.png" class="d-block w-100" alt="img3"height="408px">
+                              <img src="images/cover page 8.png" class="d-block w-100" alt="img3"height="400px">
                            </div>
                            </div>
                                  <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">

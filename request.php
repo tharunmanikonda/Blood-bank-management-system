@@ -31,33 +31,83 @@ if ( isset($_POST['name']) && isset($_POST['number'])
 }
 
 ?>
-<html>
-<head></head><body>
-<p>Add A New User</p>
-<form method="post">
-<p>Name:
-<label for="name"></label>
-<input type="text" name="name" size="40"></p>
-<p>phone no:
-<input type="text" name ="number" >
-</p>
-<p>UNITS:
-<label for="units"></label>
-<input type="text" name="units"></p>
-<p>ADDRESS:
-<label for="address"></label>
-<input type="text" name="address"></p>
-<p><label for="blood type">TYPE OF BLOOD:</label>
-    <select id="blood_group" name="blood_group">
-            <?php
-            foreach($rows as $row){
-                echo "<option value = ".$row['BLOOD_ID'].">";
-                echo htmlentities($row['TYPE_OF_BLOOD']);
-                echo "</option>";
-            } 
-            ?>
-            </select></p>
-     <br>
-<p><input type="submit" value="Add New"/></p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body >
+    <?php require_once "bootstrap.php";
+     ?>
+     <link rel="stylesheet" href="bootstrap/css/background.css">
+
+<div class="container">
+    <div class ="col-4">
+    </div>
+        <div class= "container">
+        <h1>fill the details</h1>
+        <div class="col-12">
+        </div>
+        <form method="post" class="g-2 needs-validation" novalidate>
+            <div class ="row">
+                <div class="col-3">
+                        <label for="name" class="form-label">NAME</label>
+                        <input type="text" class="form-control"id="name" value ="" required name="name">
+                        <div class="valid-feedback">
+                             Looks good!
+                        </div>
+                </div>   
+                <div class="col-3">
+                        <label for="phonenumber" class="form-label">PHONE NO</label>
+                        <input type="text" class="form-control" id="D_AGE"value ="" required  name ="number">
+                        <div class="valid-feedback">
+                         please enter your number.
+                        </div>
+                </div>
+            </div> 
+            <div class ="row">   
+                <div class="col-3">
+                        <label for="UNITS" class="form-label">UNITS</label>
+                        <div class="input-group has-validation">
+                            <input type="text" class="form-control" name="units" aria-describedby="username" required id="username">
+                            <div class="invalid-feedback">
+                                 Please choose a username.
+                            </div>
+                        </div>
+                 </div>  
+                <div class="col-3">
+                        <label for="ADDRESS" class="form-label">ADDRESS</label>
+                        <div class="input-group has-validation">
+                            <input type="text" class="form-control"  name="address" aria-describedby="username" required id="username">
+                            <div class="invalid-feedback">
+                                 Please choose a username.
+                            </div>
+                        </div>
+                 </div>
+            </div>
+
+            </div>
+                <div class="col-4">
+                     <label for="blood type" class="form-label">TYPE OF BLOOD:</label>
+                     <div></div>
+                        <select class="form-select" id="blood_group" name="blood_group">
+                            <option selected disabled value="">blood group</option>
+                                <?php
+                                     foreach($rows as $row){
+                                          echo "<option value = ".$row['BLOOD_ID'].">";
+                                          echo htmlentities($row['TYPE_OF_BLOOD']);
+                                          echo "</option>";
+                                          } 
+                                 ?>
+                        </select>
+                </div>
+                <p></p>
+                <p><input type="submit" class="btn btn-lg btn-primary btn-bloc" value="Add New"></p>
 </form>
+    </div>
+</div>
 </body>
+</html>

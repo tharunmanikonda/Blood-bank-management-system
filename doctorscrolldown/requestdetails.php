@@ -58,5 +58,6 @@ $count=1;
                         <a class="btn btn-primary btn-lg btn-block" href="../doctorpage.php" role="button" aria-expanded="false" aria-controls="collapseExample">
                                 back
                 </a>
+                
                 </body>
         </html>

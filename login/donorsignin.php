@@ -18,13 +18,10 @@ if ( isset($_POST['username'])) {
     if((strlen($_POST['username'])>0) && (strlen($_POST['password'])>0)){
         $stmt3 = $pdo->query("SELECT `D_ID` FROM `doner_signin` WHERE USERNAME = '".$_POST['username']."' AND PASSWORD ='".$_POST['password']."'");
         $rows2 = $stmt3->fetchAll(PDO::FETCH_ASSOC);
-        //print_r (isset($rows2[0]));
         if(count($rows2)>0){
-            $_SESSION['success'] = "done";
             $_SESSION['USERNAME'] = $rows2[0]['USERNAME'];
             $_SESSION['D_ID']=$rows2[0]['D_ID'];
             $_SESSION['role']= 1;
-            //echo("<a href='admin/delete.php?donor_id=".$row['donor_id'].
             header('Location: ../pagenavbar/donorpage.php');
             return;
         }else {
@@ -44,37 +41,32 @@ if ( isset($_POST['username'])) {
     <title>Document</title>
     
 </head>
-<body>
-<h1>please login</h1>
+<body class="text-center">
 <?php
-
 if (isset($_SESSION['error'])){
     echo($_SESSION['error']);
     unset($_SESSION['error']);
 }
 require_once "bootstrap.php";
 ?>
-<form method ="post" >
+<link rel="stylesheet" href="../bootstrap/css/background.css">
 <p>
-<div class="row2">
-</div>
-<div class ="row3">
-<div class ="col-md-2">
-</div>
-<div class ="col-md-5">
-<div class="form-floating mb-5">
-<label for="username">USERNAME:</label>
-<input type="text" class="form-control" name ="username" id="username" placeholder="name@example.com">
 </p>
-<P>
-<div class="form-floating mb-3">
-<label for="password">PASSWORD:</label>
-<input type="password" class="form-control" name ="password" id ="password" placeholder="Password">
-</p>
-<input type="submit" value="submit" id="submit">
-<input type="submit" value="cancel" name ="cancel" id ="Cancel">
-<input type="submit" id="signup" name= "signup" value="signup">
-</form>
+<p></p>
+<form class="form-signin"  method="post" >  
+        <img class="mb-4" src="../images/logo.png" alt="" width="72" height="72">
+        <h3 class="h3 mb-3 font-weight-normal"> Donor Login</h3>  
+    <p><label for="username" >USERNAME :</label>
+    <input type="text" name ="username" id = "username">
+    </p>
+    <p><label  for="password"> PASSWORD :</label>
+    <input type="password"  name ="password" id ="password">
+    </p>
+    <p> <input type="submit" value="submit" id="submit"> </label>
+      <label><input type="submit" value="cancel" name ="cancel" id ="Cancel"></label>
+      <label><input type="submit" id="signup" name= "signup" value="signup"></label></p>
+
+    </form>
     
 </body>
 </html>
