@@ -13,18 +13,20 @@ if(isset($_POST['Cancel'])){
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Document</title>
-              <?php require_once "bootstrap.php";?>
+              
      
         </head>
-        <body>
+        <body class="text-center">
             <?php   $count = 1;
                     $stmt3 = $pdo->query("SELECT D_NAME,blood_id FROM `doner`");
                     $rows3 = $stmt3->fetchAll(PDO::FETCH_ASSOC);
                     
                     
             ?>
+            <div class ="container mt-5" >
+            <?php require_once "bootstrap.php";?>
             <h1>donors are</h1>
-                <table class="table table-striped">
+                <table class="table table-dark table-hover">
                    <thead>
                         <tr>
                              <th scope="col">sno</th>
@@ -46,9 +48,13 @@ if(isset($_POST['Cancel'])){
                                 ?>
                             </tbody>
                 </table>
-                <a class="btn btn-primary btn-lg btn-block"  href="../doctorpage.php" role="button" aria-expanded="false" aria-controls="collapseExample">
+                <div class="shadow lg p-2 mb-5  rounded">
+                <a class="btn btn-primary btn-lg btn-block"  href="../doctornav/doctorpage.php" role="button" aria-expanded="false" aria-controls="collapseExample">
                                 back
                 </a>
+                </div>
+                </div>
+                <link rel="stylesheet" href="../bootstrap/css/background.css"> 
         </body>
         </html>
         

@@ -54,8 +54,9 @@ if ( isset($_POST['username'])) {
 <p>
 </p>
 <p></p>
-<form class="form-signin"  method="post" >  
-        <img class="mb-4" src="../images/logo.png" alt="" width="72" height="72">
+<form class="form-signin"  method="post">
+        <div class="container mt-5">  
+        <img class="mb-3" src="../images/logo2.png" alt=""  height="60">
         <h3 class="h3 mb-3 font-weight-normal"> Doctor Login</h3>  
     <p><label for="username" >USERNAME :</label>
     <input type="text" name ="username" id = "username">
@@ -63,10 +64,10 @@ if ( isset($_POST['username'])) {
     <p><label  for="password"> PASSWORD :</label>
     <input type="password"  name ="password" id ="password">
     </p>
-    <p> <input type="submit" value="submit" id="submit"> </label>
-      <label><input type="submit" value="cancel" name ="cancel" id ="Cancel"></label>
-      <label><input type="submit" id="signup" name= "signup" value="signup"></label></p>
-
+    <p> <input type="submit" class="btn btn-outline-dark" value="submit" id="submit"> </label>
+      <label><input type="submit"class="btn btn-outline-dark"  value="cancel" name ="cancel" id ="Cancel"></label>
+      <label><input type="submit" class="btn btn-outline-dark" id="signup" name= "signup" value="signup"></label></p>
+        </div>
     </form>
 </body>
 </html>

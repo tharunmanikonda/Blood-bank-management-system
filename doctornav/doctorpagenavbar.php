@@ -16,16 +16,19 @@
               </a>
         </li>
         <li class="nav-item">
-        <a class="nav-link"aria-current="page" href="../doctorscrolldown/donordetails.php">donor</a>
+        <a class="nav-link"aria-current="page" href="../doctorscrolldown/donordetails.php">Donor</a>
         </li>
         <li class="nav-item">
-        <a class="nav-link" aria-current="page" href="../doctorscrolldown/requestdetails.php">request</a>
+        <a class="nav-link" aria-current="page" href="../doctorscrolldown/requestdetails.php">Request</a>
         </li>
         <li class="nav-item">
-        <a class="nav-link" aria-current="page" href="../doctorscrolldown/solddetails.php">doanted blood</a>
+        <a class="nav-link" aria-current="page" href="../doctorscrolldown/solddetails.php">Doanted Blood</a>
         </li>
         <li class="nav-item">
-        <a class="nav-link" aria-current="page" href="../index.php">log out</a>
+        <a class="nav-link" aria-current="page" href="../doctorscrolldown/bloodbank.php">Blood Bank</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" aria-current="page" href="../index.php">Log Out</a>
         </li>
       </ul>
     </div>

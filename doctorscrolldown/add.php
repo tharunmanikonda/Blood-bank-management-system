@@ -16,6 +16,9 @@ if(isset($_POST['submit'])){
                     header('Location: requestdetails.php');
                 
                 }
+    if(isset($_POST['cancel'])){
+        header('Location: ../doctornav/doctorpage.php');
+    }            
 
                 ?>
                 <!DOCTYPE html>
@@ -25,15 +28,21 @@ if(isset($_POST['submit'])){
                     <meta name="viewport" content="width=device-width, initial-scale=1.0">
                     <title>Document</title>
                 </head>
-                <body>
+                <body class="text-center">
                 <?php  require_once "bootstrap.php"; 
                 
                 ?>
-                <form class="form-signin" action="" method="post">
-        <h1>accept request</h1>
-                <br>
-        <input type="submit" class="btn btn-lg btn-primary btn-bloc" name ="submit"value="Yes">
-            <input type="submit" class="btn btn-lg btn-primary btn-bloc" name="cancel" value="Cancel"></p>
-        </form>                    
+                <div class="container mt-5 ">
+                <div class="shadow lg p-2 mb-5 rounded bg-secondary">
+        
+                <form class="form-signin" method="post">
+                            <h1>accept request</h1>
+                                <br>
+                            <input type="submit" class="btn btn-lg btn-primary btn-bloc" name ="submit"value="Yes">
+                            <input type="submit" class="btn btn-lg btn-primary btn-bloc" name="cancel" value="Cancel"></p>
+                </div>
+                </form> 
+                </div> 
+                <link rel="stylesheet" href="../bootstrap/css/background.css">                  
                 </body>
                 </html>

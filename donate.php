@@ -52,8 +52,8 @@ if (isset($_POST['name'])&& isset($_POST['phoneno'])&& isset($_POST['units'])&& 
     <P> <label for="address"> ADDRESS:</label>
     <input type="text" id="address" name="address">
     <br>
-    <input type="submit" value ="add" id="submit">
-    <input type="submit" value ="Cancel" name="cancel" id="cancel">
+    <input type="submit" class="btn btn-primary" value ="add" id="submit">
+    <input type="submit" class="btn btn-primary" value ="Cancel" name="cancel" id="cancel">
     
 </form>
 </body>

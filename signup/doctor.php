@@ -61,9 +61,10 @@ if ( isset($_POST['username'])) {
  }
  require_once "bootstrap.php";
  ?>
- <h1>please login</h1>
+    <link rel="stylesheet" href="../bootstrap/css/background.css">
   <div class="container">
-        <div class= "container">
+        <div class= "container mt-4">
+        <h1>Please Register Here </h1>
         <div class="col-12">
         </div>
             <form method="post" id="form_login" class="g-2 needs-validation" novalidate>
@@ -132,8 +133,9 @@ if ( isset($_POST['username'])) {
             </div>
             <div class ="row">
                     <div class="col-md-12">
-                         <input type="submit"value ="add" id="submit">
-                                 <input type="submit" value ="Cancel" name="cancel" id="cancel">
+                        <h1></h1>
+                         <input type="submit" class="btn btn-primary"value ="add" id="submit">
+                                 <input type="submit"  class="btn btn-primary"value ="Cancel" name="cancel" id="cancel">
                                     
                     </div>
               </div>                      

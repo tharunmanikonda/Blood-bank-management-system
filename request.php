@@ -23,11 +23,7 @@ if ( isset($_POST['name']) && isset($_POST['number'])
     );
     
     $_SESSION['success'] = "data inserted";
-    header('Location: index.php');
-
- 
-  
-
+    header('Location: index.php');  
 }
 
 ?>
@@ -44,13 +40,13 @@ if ( isset($_POST['name']) && isset($_POST['number'])
      ?>
      <link rel="stylesheet" href="bootstrap/css/background.css">
 
-<div class="container">
-    <div class ="col-4">
+<div class="container mt-5">
+
+    <div class ="col-4 row " >
     </div>
         <div class= "container">
         <h1>fill the details</h1>
-        <div class="col-12">
-        </div>
+       
         <form method="post" class="g-2 needs-validation" novalidate>
             <div class ="row">
                 <div class="col-3">
@@ -105,7 +101,7 @@ if ( isset($_POST['name']) && isset($_POST['number'])
                         </select>
                 </div>
                 <p></p>
-                <p><input type="submit" class="btn btn-lg btn-primary btn-bloc" value="Add New"></p>
+                <p><input type="submit" class="btn btn-lg btn-primary btn-bloc" value="Request"></p>
 </form>
     </div>
 </div>

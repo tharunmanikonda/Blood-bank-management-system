@@ -36,7 +36,6 @@ if ( isset($_POST['username'])) {
             );
 
             $_SESSION['success'] = "data inserted";
-            //$_SESSION['D_NAME'] = "$_POST['username']";
             header('Location: ../login/donorsignin.php');
         
         }
@@ -55,7 +54,9 @@ if ( isset($_POST['username'])) {
 
 </head>
 <body>
-<h1>donor table :</h1>
+<h1>
+</h1>
+
 <?php
  if(isset($_SESSION['error'])){
      echo $_SESSION['error'];
@@ -63,8 +64,9 @@ if ( isset($_POST['username'])) {
  }
  require_once "bootstrap.php";
  ?>
-
-    <div class="container">
+    <link rel="stylesheet" href="../bootstrap/css/background.css">
+    <div class="container mt-5">
+    <h1>Please Register Here </h1>
         <div class= "container">
         <div class="col-12">
         </div>
@@ -155,8 +157,9 @@ if ( isset($_POST['username'])) {
             </div>
             <div class ="row">
                     <div class="col-md-12">
-                         <input type="submit"value="submit">
-                                 <input type="submit" value ="Cancel" name="cancel" id="cancel">
+                    <h1></h1>
+                         <input type="submit" class="btn btn-primary"value="submit">
+                                 <input type="submit" class="btn btn-primary" value ="Cancel" name="cancel" id="cancel">
                                     
                     </div>
                                             

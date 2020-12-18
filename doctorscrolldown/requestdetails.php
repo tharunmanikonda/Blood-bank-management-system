@@ -17,7 +17,7 @@ if(isset($_POST['Cancel'])){
               <?php require_once "bootstrap.php";?>
      
         </head>
-        <body>
+        <body class="text-center">
             <?php
             if(isset($_SESSION['success1'])){
                  echo($_SESSION['name']);
@@ -29,8 +29,9 @@ $stmt4 = $pdo->query("SELECT R_ID,R_NAME,R_PHONENO,R_UNITS FROM `request`");
 $rows4 = $stmt4->fetchAll(PDO::FETCH_ASSOC);
 $count=1;
 ?>
-<p>requests are </p>
-<table class="table table-striped">
+<div class ="container mt-5">
+<h1> Pending Requests </h1>
+<table class="table table-dark table-hover"class="badge bg-dark">
                    <thead>
                         <tr>
                         <th scope="col">Sno</th>
@@ -55,9 +56,12 @@ $count=1;
                                     </tbody>
                         </table>
                         <p></p>
-                        <a class="btn btn-primary btn-lg btn-block" href="../doctorpage.php" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        <div class="shadow lg p-2 mb-5  rounded">
+                        <a class="btn btn-primary btn-lg btn-block" href="../doctornav/doctorpage.php" role="button" aria-expanded="false" aria-controls="collapseExample">
                                 back
                 </a>
-                
+                </div>
+                </div>
+                <link rel="stylesheet" href="../bootstrap/css/background.css"> 
                 </body>
         </html>

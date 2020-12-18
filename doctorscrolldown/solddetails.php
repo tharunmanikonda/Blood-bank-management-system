@@ -17,12 +17,12 @@ $stmt5 = $pdo->query("SELECT sold.R_ID,request.R_PHONENO,request.R_NAME,request.
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Document</title>
               <?php require_once "bootstrap.php";?>
-     
+      
         </head>
-        <body>
+        <body class="text-center">
+        <div class ="container mt-5">
         <h1>donated details</h1>
-
-     <table class="table table-striped">
+        <table class="table table-dark table-hover">
                    <thead>
                         <tr>
                              <th scope="col">sno</th>
@@ -45,10 +45,12 @@ $stmt5 = $pdo->query("SELECT sold.R_ID,request.R_PHONENO,request.R_NAME,request.
                             ?>
                             </tbody>
                             </table>
-                            <div class="shadow p-3 mb-5 bg-white rounded">
-                            <a class="btn btn-primary btn-lg btn-block" data-toggle="collapse" href="../doctorpage.php" role="button" aria-expanded="false" aria-controls="collapseExample">
+                            <div class="shadow lg p-2 mb-5  rounded">
+                            <a class="btn btn-primary btn-lg btn-block"  href="../doctornav/doctorpage.php" role="button" aria-expanded="false" aria-controls="collapseExample">
                                      back         
                             </a>
+                            <link rel="stylesheet" href="../bootstrap/css/background.css"> 
+                            </div>
                             </div>
         </body>
         </html>
