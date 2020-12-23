@@ -5,7 +5,7 @@ $sql = $pdo->query("SELECT blood_group.TYPE_OF_BLOOD,SUM(blood_bank.UNITS) as to
 LEFT JOIN blood_group on blood_bank.BLOOD_ID = blood_group.BLOOD_ID");
          $rows2 = $sql->fetchAll(PDO::FETCH_ASSOC);
          $count =1;
-         print_r($rows2);
+        
 ?>
 <!DOCTYPE html>
 <html lang="en">
