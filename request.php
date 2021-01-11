@@ -3,6 +3,11 @@ require_once "pdo.php";
 $stmt = $pdo->query("SELECT * FROM blood_group");
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+if(isset($_POST['cancel'])){
+    header('Location: index.php');
+    return;
+  }
+
 
 if ( isset($_POST['name']) && isset($_POST['number']) 
      &&isset($_POST['units']) && isset($_POST['address']) &&isset($_POST['blood_group']) ) {
@@ -101,7 +106,8 @@ if ( isset($_POST['name']) && isset($_POST['number'])
                         </select>
                 </div>
                 <p></p>
-                <p><input type="submit" class="btn btn-lg btn-primary btn-bloc" value="Request"></p>
+                <p><input type="submit" class="btn btn-lg btn-primary btn-bloc" value="Request">
+                <input type="submit" class="btn btn-lg btn-primary btn-bloc" value ="Cancel" name="cancel" id="cancel"></p>
 </form>
     </div>
 </div>

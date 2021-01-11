@@ -17,7 +17,7 @@ if(isset($_POST['submit'])){
                 
                 }
     if(isset($_POST['cancel'])){
-        header('Location: ../doctornav/doctorpage.php');
+        header('Location: requestdetails.php');
     }            
 
                 ?>

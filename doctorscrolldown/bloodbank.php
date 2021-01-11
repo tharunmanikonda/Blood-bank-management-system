@@ -40,6 +40,11 @@ LEFT JOIN blood_group on blood_bank.BLOOD_ID = blood_group.BLOOD_ID");
                                 ?>
                             </tbody>
                 </table>
+                <div class="shadow lg p-2 mb-5  rounded">
+                        <a class="btn btn-primary btn-lg btn-block"  href="../doctornav/doctorpage.php" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                back
+                        </a>
+                </div>
  </div> 
  <link rel="stylesheet" href="../bootstrap/css/background.css">  
 </body>

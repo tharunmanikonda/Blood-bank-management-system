@@ -25,7 +25,7 @@ if ( isset($_POST['username'])) {
             header('Location: ../doctornav/doctorpage.php');
             return;
         }else {
-            $_SESSION['error']='Wrong Username and Password';
+            echo('Wrong Username and Password');
             header('Location: doctorsignin.php');
             return;
         }

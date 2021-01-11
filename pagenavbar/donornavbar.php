@@ -16,10 +16,10 @@
               </a>
         </li>
         <li class="nav-item">
-        <a class="nav-link"aria-current="page" href="login/doctorsignin.php">doctor</a>
+        <a class="nav-link"aria-current="page" href=""></a>
         </li>
         <li class="nav-item">
-        <a class="nav-link" aria-current="page" href="login/donorsignin.php">donor</a>
+        <a class="nav-link" aria-current="page" href=""></a>
         </li>
         <li class="nav-item">
         <a class="nav-link" aria-current="page" href="../index.php">logout</a>

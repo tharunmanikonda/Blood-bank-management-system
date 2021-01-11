@@ -38,7 +38,7 @@ require_once "../pdo.php";
             </div>
                     <div class ="col-md-3">
                     <div class="card" style="width: 18rem;">
-                        <img src="../images/bb.png" class="card-img-top" alt="...">
+                        <img src="../images/bb1.png" class="card-img-top" alt="...">
                         <div class="card-body">
                         <h5 class="card-title"><?=$_SESSION['USERNAME']?></h5>
                         <p class="card-text">blood group is  <?= $_SESSION['bloodgroup']?></p>

@@ -40,6 +40,12 @@ if ( isset($_POST['username'])) {
         
         }
     }
+    else{
+        $_SESSION['error'] = "enter data according to requirements";
+        header('location:donorsignup.php');
+        return;
+
+}
     
 }
 
