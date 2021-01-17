@@ -1,0 +1,16 @@
+SELECT blood_group.TYPE_OF_BLOOD,(blood_bank.UNITS) as total_blood FROM blood_group,blood_bank 
+WHERE  blood_group.BLOOD_ID =blood_bank.BLOOD_ID 
+OR
+
+CREATE TRIGGER d_request 
+AFTER INSERT on sold
+for EACH ROW
+delimiter $$
+CREATE TRIGGER d_request AFTER INSERT ON sold 
+FOR EACH ROW
+BEGIN
+SET NEW.BLOOD_ID =
+DELETE IN request WHERE request.R_ID = 1;
+END; $$
+delimiter;
+

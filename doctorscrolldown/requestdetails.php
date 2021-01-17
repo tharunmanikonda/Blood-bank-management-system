@@ -6,6 +6,7 @@ session_start();
 if(isset($_POST['Cancel'])){
     header('Location: docterpage.php');
     return;
+    
 }
 ?>
 <!DOCTYPE html>
@@ -48,7 +49,7 @@ $count=1;
                                         echo "<td class=''>".htmlentities($row['R_NAME'])."</td>";
                                         echo "<td class=''>".htmlentities($row['R_PHONENO'])."</td>";
                                         echo "<td class=''>".htmlentities($row['R_UNITS'])."</td>";
-                                        echo("<td class='' > <a href='add.php?R_id=".$row['R_ID']."'>ACCEPT REQUEST</a></td>");
+                                        echo("<td class=''> <a class='btn btn-success btn-sm ' role='button' href='add.php?R_id=".$row['R_ID']."'>ACCEPT REQUEST</a></td>");
                                         echo "</tr>";
                                         $count++;
                                     }
