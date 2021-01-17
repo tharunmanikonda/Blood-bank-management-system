@@ -22,6 +22,9 @@
         <a class="nav-link" aria-current="page" href=""></a>
         </li>
         <li class="nav-item">
+        <a class="nav-link" aria-current="page" href="donate.php">Donate Blood</a>
+        </li>
+        <li class="nav-item">
         <a class="nav-link" aria-current="page" href="../index.php">logout</a>
         </li>
       </ul>

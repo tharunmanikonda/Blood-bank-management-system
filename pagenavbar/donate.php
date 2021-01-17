@@ -1,6 +1,6 @@
 <?php  
 
-require_once "pdo.php";
+require_once "../pdo.php";
 session_start();
 
 
@@ -35,17 +35,22 @@ if (isset($_POST['name'])&& isset($_POST['phoneno'])&& isset($_POST['units'])&& 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-<form method="post">
-   <P> <label for="NAME"> NAME:</label>
-    <input type="text" id="name" name="name">
-    <br>
-    </P>
-    <P> <label for="PHONENO"> PHONE NO:</label>
+<body class="text-center">
+<? require_once "bootstrap.php";
+ require_once "donornavbar.php";?>
+<link rel="stylesheet" href="../bootstrap/css/background.css">
+    <div class="container mt-5">
+<form method="post" class="g-2 needs-validation" novalidate>
+<div class ="row">
+                <div class="col-3">
+                     <label for="NAME"> NAME:</label>
+                     <input type="text" id="name" name="name">
+
+    <P> <label for="PHONENO"class="form-label"> PHONE NO:</label>
     <input type="text" id="phoneno" name="phoneno">
     <br>
     </P>
-    <P> <label for="UNITS"> UNITS:</label>
+    <P> <label for="UNITS" class="form-label"> UNITS:</label>
     <input type="text" id="UNITS" name="units">
     <br>
     </P>
