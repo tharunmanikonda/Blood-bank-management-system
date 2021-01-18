@@ -6,7 +6,11 @@ session_start();
 if(isset($_POST['Cancel'])){
     header('Location: docterpage.php');
     return;
-    
+
+}
+if(isset($_SESSION['id'])){
+    $stmt11 = $pdo->query("DELETE FROM `request` WHERE R_ID = '".$_SESSION['id']."'");
+    $rows11 = $stmt11->fetchAll(PDO::FETCH_ASSOC);
 }
 ?>
 <!DOCTYPE html>
@@ -25,6 +29,7 @@ if(isset($_POST['Cancel'])){
                 echo ($_SESSION['success1']);
                 unset($_SESSION['success1']);
                 unset($_SESSION['name']);
+
             }
 $stmt4 = $pdo->query("SELECT R_ID,R_NAME,R_PHONENO,R_UNITS FROM `request`");
 $rows4 = $stmt4->fetchAll(PDO::FETCH_ASSOC);

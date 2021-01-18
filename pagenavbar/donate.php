@@ -26,7 +26,7 @@ if (isset($_POST['name'])&& isset($_POST['blood_group'])&& isset($_POST['units']
         }
     else{
         echo "data not found please signup first";
-        header('Location: donorsignup.php');
+        header('Location: ../signup/donorsignup.php');
         return;
     }
 }

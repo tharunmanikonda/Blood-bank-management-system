@@ -11,7 +11,7 @@ if(isset($_POST['submit'])){
                     ':bid' => $rows2[0]['BLOOD_ID'],
                     ':nm' => $rows2[0]['R_NAME']
                     ));
-                    //$_SESSION['name']="$rows2[0]['R_NAME']";
+                    $_SESSION['id']=$rows2[0]['R_ID'];
                     //$_SESSION['success1'] = "request accepted";
                     header('Location: requestdetails.php');
                 

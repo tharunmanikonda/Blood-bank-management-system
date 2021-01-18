@@ -1,8 +1,7 @@
 <?php 
 session_start(); 
 require_once "../pdo.php";
-$sql = $pdo->query("SELECT blood_group.TYPE_OF_BLOOD,SUM(blood_bank.UNITS) as total_blood FROM blood_bank 
-LEFT JOIN blood_group on blood_bank.BLOOD_ID = blood_group.BLOOD_ID");
+$sql = $pdo->query("SELECT bg.TYPE_OF_BLOOD ,SUM(b.UNITS)  as total_blood FROM blood_bank b ,blood_group bg WHERE bg.BLOOD_ID=b.BLOOD_ID GROUP BY bg.TYPE_OF_BLOOD");
          $rows2 = $sql->fetchAll(PDO::FETCH_ASSOC);
          $count =1;
         
@@ -32,8 +31,8 @@ LEFT JOIN blood_group on blood_bank.BLOOD_ID = blood_group.BLOOD_ID");
                                 <?php
                                     foreach ( $rows2 as $row ) {
                                         echo "<td class=''>".$count."</td>";
-                                        echo "<td class=''>".htmlentities($rows2[0]['TYPE_OF_BLOOD'])."</td>";
-                                        echo "<td class=''>".htmlentities($rows2[0]['total_blood'])."</td>";
+                                        echo "<td class=''>".htmlentities($row['TYPE_OF_BLOOD'])."</td>";
+                                        echo "<td class=''>".htmlentities($row['total_blood'])."</td>";
                                         echo "</tr>";
                                         $count++;
                                         }

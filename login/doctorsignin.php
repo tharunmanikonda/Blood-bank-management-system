@@ -66,7 +66,7 @@ if ( isset($_POST['username'])) {
     </p>
     <p> <input type="submit" class="btn btn-outline-dark" value="submit" id="submit"> </label>
       <label><input type="submit"class="btn btn-outline-dark"  value="cancel" name ="cancel" id ="Cancel"></label>
-      <label><input type="submit" class="btn btn-outline-dark" id="signup" name= "signup" value="signup"></label></p>
+      <!--<label><input type="submit" class="btn btn-outline-dark" id="signup" name= "signup" value="signup"></label></p>!-->
         </div>
     </form>
 </body>
