@@ -48,10 +48,11 @@ session_start();
                   </div>
                               <div class="jumbotron">
                                      <h1 class="display-5">Hello, world!</h1>
-                                         <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                                     <p></p>
+                                         <p class="lead font-weight-bold">“A single pint can save three lives, a single gesture can create a million smiles”.</p>
                                                  <hr class="my-5">
-                                                     <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-                                                            <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+                                                     <p class ="font-weight-normal">It uses utility classes for typography and spacing to space content out within the larger container.</p>
+                                                            
                                 </div>
                           </div>
 </body>

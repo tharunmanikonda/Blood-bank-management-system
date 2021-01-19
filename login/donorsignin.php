@@ -25,7 +25,7 @@ if ( isset($_POST['username'])) {
             header('Location: ../pagenavbar/donorpage.php');
             return;
         }else {
-            $_SESSION['error']='Wrong Username and Password';
+            $_SESSION['error']='Wrong Username or Password';
             header('Location: donorsignin.php');
             return;
         }
@@ -44,7 +44,7 @@ if ( isset($_POST['username'])) {
 <body class="text-center">
 <?php
 if (isset($_SESSION['error'])){
-    echo($_SESSION['error']);
+    echo"<div class='alert alert-danger' role='alert'> ".($_SESSION['error'])."</div>";
     unset($_SESSION['error']);
 }
 require_once "bootstrap.php";

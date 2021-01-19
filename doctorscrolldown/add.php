@@ -4,7 +4,6 @@ require_once "../pdo.php";
 if(isset($_POST['submit'])){
     $stmt3 = $pdo->query("SELECT R_ID,R_NAME,BLOOD_ID FROM request WHERE R_ID = '".$_GET['R_id']."'");
             $rows2 = $stmt3->fetchAll(PDO::FETCH_ASSOC);
-    print_r($rows2);
     $stmt1 = $pdo->prepare ("INSERT INTO sold (`R_ID`,`B_ID`, `Name`) VALUES (:id ,:bid,:nm)");
          $stmt1->execute(array(
                     ':id' => $rows2[0]['R_ID'],
@@ -12,9 +11,10 @@ if(isset($_POST['submit'])){
                     ':nm' => $rows2[0]['R_NAME']
                     ));
                     $_SESSION['id']=$rows2[0]['R_ID'];
-                    //$_SESSION['success1'] = "request accepted";
+                    //$_SESSION['success1'] = "request accepted"; 
+                    $stmt31 = $pdo->query("UPDATE request set`SOLD`= 1 where R_ID = '".$rows2[0]['R_ID']."'");
                     header('Location: requestdetails.php');
-                
+                    return;
                 }
     if(isset($_POST['cancel'])){
         header('Location: requestdetails.php');

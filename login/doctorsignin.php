@@ -1,10 +1,8 @@
 <?php
 session_start();
 require_once "../pdo.php";
-if(isset($_SESSION['success'])){
-    echo ($_SESSION['success']);
-    unset($_SESSION['success']);
-}
+
+
 if(isset($_POST['cancel'])){
     header('Location: ../index.php');
     return; 
@@ -25,7 +23,7 @@ if ( isset($_POST['username'])) {
             header('Location: ../doctornav/doctorpage.php');
             return;
         }else {
-            echo('Wrong Username and Password');
+            $_SESSION['error']='Wrong Username or Password';
             header('Location: doctorsignin.php');
             return;
         }
@@ -45,7 +43,8 @@ if ( isset($_POST['username'])) {
 <body class="text-center">
 <?php
         if(isset($_SESSION['error'])){
-         echo($_SESSION['error']);
+         echo"<div class='alert alert-danger' role='alert'> ".($_SESSION['error'])."</div>";
+         
          unset($_SESSION['error']);
         }
         require_once "bootstrap.php";

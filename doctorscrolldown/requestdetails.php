@@ -8,10 +8,10 @@ if(isset($_POST['Cancel'])){
     return;
 
 }
-if(isset($_SESSION['id'])){
-    $stmt11 = $pdo->query("DELETE FROM `request` WHERE R_ID = '".$_SESSION['id']."'");
-    $rows11 = $stmt11->fetchAll(PDO::FETCH_ASSOC);
-}
+//if(isset($_SESSION['id'])){
+//    $stmt11 = $pdo->query("DELETE FROM `request` WHERE R_ID = '".$_SESSION['id']."'");
+  //  $rows11 = $stmt11->fetchAll(PDO::FETCH_ASSOC);
+//}
 ?>
 <!DOCTYPE html>
     <html lang="en">
@@ -31,7 +31,7 @@ if(isset($_SESSION['id'])){
                 unset($_SESSION['name']);
 
             }
-$stmt4 = $pdo->query("SELECT R_ID,R_NAME,R_PHONENO,R_UNITS FROM `request`");
+$stmt4 = $pdo->query("SELECT R_ID,R_NAME,R_PHONENO,R_UNITS FROM `request` where sold =0");
 $rows4 = $stmt4->fetchAll(PDO::FETCH_ASSOC);
 $count=1;
 ?>
