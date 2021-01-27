@@ -1,9 +1,9 @@
 <?php
 session_start();
 require_once "../pdo.php";
-if(isset($_SESSION['success'])){
-    echo $_SESSION['success'];
-    unset($_SESSION['success']);
+if(isset($_SESSION['success11'])){
+    echo"<div class='alert alert-success' role='alert'> ".($_SESSION['success11'])."</div>";
+    unset($_SESSION['success11']);
 }
 
 if(isset($_POST['signup'])){

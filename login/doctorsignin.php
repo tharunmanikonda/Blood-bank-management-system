@@ -17,7 +17,7 @@ if ( isset($_POST['username'])) {
         $rows2 = $stmt3->fetchAll(PDO::FETCH_ASSOC);
         //print_r (isset($rows2[0]));
         if(count($rows2)>0){
-            $_SESSION['success'] = "done";
+            $_SESSION['success'] = "data inserted";
             $_SESSION['D_ID']=$rows2[0]['D_ID'];
             $_SESSION['role']= 1;
             header('Location: ../doctornav/doctorpage.php');

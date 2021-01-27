@@ -6,27 +6,29 @@ if(isset($_POST['cancel'])){
     header('Location: donorpage.php');
     return;
   }
+  if (isset($_SESSION['success121'])){
+    echo"<div class='alert alert-danger' role='alert'> ".($_SESSION['success121'])."</div>";
+    unset($_SESSION['success121']);
+}
+
   $stmt = $pdo->query("SELECT * FROM blood_group");
   $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 if (isset($_POST['name'])&& isset($_POST['blood_group'])&& isset($_POST['units'])&& isset($_POST['address']) ){
     $sql = $pdo->query("SELECT * FROM `doner` WHERE `D_NAME` = '".$_POST['name']."'");
     $rows2 = $sql->fetchAll(PDO::FETCH_ASSOC);
-
-    if(count($rows2)>0){
         $stmt1 = $pdo->prepare('INSERT INTO blood_bank (BLOOD_ID ,UNITS,ADDRESS) VALUES ( :bid, :units, :adrs)');
         $stmt1->execute(array(
         ':bid' =>$_POST['blood_group'],
         ':units' =>$_POST['units'],
         ':adrs' =>$_POST['address'])
         );
-        $_SESSION['success'] = "data inserted";
+        $_SESSION['success121'] ="data inserted";
          header('Location: donate.php');
             return;
-        }
     else{
-        echo "data not found please signup first";
-        header('Location: ../signup/donorsignup.php');
+        $_SESSION['invalidname'] = "Enter details properly";
+        header('Location: donate.php');
         return;
     }
 }
@@ -43,7 +45,12 @@ if (isset($_POST['name'])&& isset($_POST['blood_group'])&& isset($_POST['units']
 
 </head>
 <body class="text-center">
-<?php require_once "donornavbar.php";?>
+<?php
+if (isset($_SESSION['invalidname'])){
+    echo"<div class='alert alert-danger' role='alert'> ".($_SESSION['invalidname'])."</div>";
+    unset($_SESSION['errinvalidnameor']);
+}
+ require_once "donornavbar.php";?>
 
 <link rel="stylesheet" href="../bootstrap/css/background.css">
 <div class="col-12">

@@ -35,7 +35,7 @@ if ( isset($_POST['username'])) {
             ':dn' => $rows2[0]['D_ID'])
             );
 
-            $_SESSION['success'] = "data inserted";
+            $_SESSION['success11'] = "data inserted";
             header('Location: ../login/donorsignin.php');
         
         }
